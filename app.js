@@ -1,7 +1,8 @@
 const { create } = require('xmlbuilder2');
 
-const root = create({ version: '1.0' })
+const root = create()
   .ele('root', { att: 'val' })
+  .dec({type: 'Text/xsl', href: 'AdvExmnSrh_9.xsl'})
     .ele('foo')
       .ele('bar').txt('foobar').up()
     .up()
