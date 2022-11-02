@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "xmlbuilder": "^15.1.1"
+    "xmlbuilder": "^15.1.1",
+    "xmlbuilder2": "^3.0.2"
   }
 }
