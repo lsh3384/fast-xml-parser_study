@@ -1,16 +1,13 @@
 const { create } = require('xmlbuilder2');
 
-const obj = {
-  root: {
-    '@att': 'val',
-    foo: {
-      bar: 'foobar'
-    },
-    baz: {}
-  }
-};
+const root = create({ version: '1.0' })
+  .ele('root', { att: 'val' })
+    .ele('foo')
+      .ele('bar').txt('foobar').up()
+    .up()
+    .ele('baz').up()
+  .up();
 
-
-const doc = create(obj);
-const xml = doc.end({ prettyPrint: true });
+// convert the XML tree to string
+const xml = root.end({ prettyPrint: true });
 console.log(xml);
